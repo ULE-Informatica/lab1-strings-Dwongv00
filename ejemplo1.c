@@ -12,6 +12,12 @@
  *     selected (you can remove/change instructions).
  */
 
+/*
+Para las pruebas primero utilicé el comando gcc con ambos estándares c11 y c99: gcc -Wall -pedantic -std=cxx ejemplo1.c , llegó al punto de no 
+dar warnings ni errores.
+También utilicé el comando g++ con los estándares c++11 y c++98: g++ -Wall -pedantic -std=c++xx ejemplo1.c , muestra otros warnings con respecto a gcc. 
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -20,13 +26,21 @@ char array1[] = "Foo" "bar";
 char array2[] = { 'F', 'o', 'o', 'b', 'a', 'r', '\0' };
  
 enum { BUFFER_MAX_SIZE = 1024 };
- 
+
+/* 
+La letra R está demás y lo que está dentro de las comillas se han generado saltos de línea por lo que
+no se puede asignar el valor a la constante. Realizando los cambios se corrige el error 
+*/
 const char* s1 = R"foo(
 Hello
 World
 )foo";
 const char* s2 = "\nHello\nWorld\n";
 
+/* 
+La función void no tiene retorno de valor, el return 1 no debe ir.
+se podría reemplazar con un exit(0); 
+*/
 void gets_example_func(void) {
   char buf[BUFFER_MAX_SIZE];
  
@@ -45,7 +59,10 @@ const char *get_dirname(const char *pathname) {
   return pathname;
 }
  
-
+/*
+La función gets está deprecated, no se debe usar más porque no valida la cantidad de caracteres ingresados y como consecuencia genera overflow.
+En vez de esa función se debe usar fgets.
+*/
 void get_y_or_n(void) {  
 	char response[8];
 
@@ -58,7 +75,10 @@ void get_y_or_n(void) {
 	return;
 }
 
- 
+/* 
+Con el parámetro -Wall en la compilación hay warnings donde indica variables sin utilizar dentro de la función main:
+analitic3, size_array2 y size_array1. Se deben comentar o eliminar si no se van a utilizar para que no ocupen espacio en memoria.
+*/ 
 int main(int argc, char *argv[])
 {
     char key[24];
