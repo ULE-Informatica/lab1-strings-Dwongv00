@@ -12,7 +12,12 @@ Explain in this file each error.
 -------
 
 Para el ejemplo1.c, la resolución está comentada en el código, en los branches.
-La resoluci
+La resolución del ejemplo2.c está sobre el main.
+
+
+
+
+
 
 
 
