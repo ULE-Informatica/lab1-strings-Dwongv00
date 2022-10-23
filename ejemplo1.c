@@ -78,6 +78,9 @@ void get_y_or_n(void) {
 /* 
 Con el parámetro -Wall en la compilación hay warnings donde indica variables sin utilizar dentro de la función main:
 analitic3, size_array2 y size_array1. Se deben comentar o eliminar si no se van a utilizar para que no ocupen espacio en memoria.
+
+Al momento de ejecutar, espera parámetros para su ejecución de lo contrario no se ejecuta y muestra error, así mismo se debe hacer una validación
+en caso se ingresen parámetros con tamaño mayor a 24 que es lo que se ha definido en char key[24].
 */ 
 int main(int argc, char *argv[])
 {
