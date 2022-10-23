@@ -8,3 +8,5 @@ Follow the instructions explained in the beginning of file ejemplo1.c for compil
 
 Find the memory errors presented in file ejemplo2 using gcc instrumentation option **AddressSanitizer (ASan)**.
 Explain in this file each error.
+
+La resolución está en el comentario del c
