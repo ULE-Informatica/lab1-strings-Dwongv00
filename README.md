@@ -11,7 +11,8 @@ Explain in this file each error.
 
 -------
 
-La resolución está comentada en el código, en los branches.
+Para el ejemplo1.c, la resolución está comentada en el código, en los branches.
+La resoluci
 
 
 
