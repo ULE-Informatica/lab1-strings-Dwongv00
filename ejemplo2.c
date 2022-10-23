@@ -24,6 +24,14 @@ void optionThree(){
     printf("string is: %s\n", s);
 }
 
+/*
+Cuando se ejecuta la valicación con el comando: gcc ejemplo2.c -Wall -pedantic -std=c99 -fsanitize=address -static-libasan -g -o ejemplo2.out,
+no muestra ningún error.
+Sin embargo, cuando se valida con el comando: gcc -Wall -pedantic -std=c99 -o ejemplo.out si muestra error.
+Y es que en esta funcion está tratando de escribir 19 caracteres sobre un malloc definido en 18, por eso da error. En este caso se debe corregir 
+el malloc en 19
+*/
+
 void optionFour(){
     char *s = (char *) malloc(18);
     strcpy(s,  "Welcome Sanitizer!");
